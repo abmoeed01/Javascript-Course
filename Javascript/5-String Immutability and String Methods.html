@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Immutability & String Methods</title>
+  </head>
+  <body>
+    <h1>String Immutability & String Methods</h1>
+
+    <script>
+      let msg = "Hello";
+      msg[0] = "C";
+      console.log(msg);
+
+      let msg1 = "Hello";
+      console.log(msg1.toUpperCase());
+      console.log(msg1.toLowerCase());
+
+      // indexOf
+      let str = "Hello World";
+      console.log(str.indexOf("World"));
+      console.log(str.indexOf("Worlrtyud"));
+      console.log(str.indexOf("world"));
+
+      // slice
+      let msg2 = "CheezyCode";
+      console.log(msg2.slice(6));
+      console.log(msg2.slice(6, 8));
+      console.log(msg2[8]);
+      console.log(msg2.slice(6, 9));
+
+      console.log(msg2[1]);
+      console.log(msg2[1234567]);
+
+
+    </script>
+  </body>
+</html>

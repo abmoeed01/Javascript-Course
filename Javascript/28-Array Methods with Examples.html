@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Methods with Examples</title>
+  </head>
+  <body>
+    <h1>Array Methods with Examples</h1>
+    <ol>
+      <li>forEach</li>
+      <li>map</li>
+      <li>findIndex</li>
+      <li>filter</li>
+      <li>find</li>
+    </ol>
+
+    <script>
+      // 1
+      const isEven = (number) => {
+        return number % 2 == 0;
+      };
+      console.log(isEven(2));
+      console.log(isEven(3));
+
+      //   2
+      let arr = [1, 2, 3, 4, 5];
+      let arr2 = arr.filter(isEven);
+      console.log(arr2);
+
+      //   3
+      let arr3 = arr.filter((number) => {
+        return number % 2 == 0;
+      });
+      console.log(arr3);
+
+      //   4
+      let arr4 = arr.filter((number) => number % 2 == 0);
+      console.log(arr4);
+
+      //   5
+      let arr5 = [1, 2, 3, 4, 5];
+      arr5.forEach((number) => {
+        console.log(number);
+      });
+
+      //   6
+      let arr6 = arr5.map((number) => {
+        return number * number;
+      });
+      console.log(arr6);
+
+      //   7
+      console.log(arr5.find((x) => x == 6));
+      console.log(arr5.findIndex((x) => x == 3));
+
+      //   8
+      function Person(fname, lname, age) {
+        this.firstName = fname;
+        this.lastName = lname;
+        this.age = age;
+      }
+
+      let persons = [
+        new Person("John", "Doe", 22),
+        new Person("Jason", "Smith", 16),
+        new Person("Lilly", "Doe", 21),
+      ];
+      console.log(persons.filter((x) => x.age > 18));
+
+      //   9
+      let persons2 = persons.map((x) => {
+        return new Person(
+          x.firstName.toUpperCase(),
+          x.lastName.toUpperCase(),
+          x.age
+        );
+      });
+      console.log(persons2);
+    </script>
+  </body>
+</html>

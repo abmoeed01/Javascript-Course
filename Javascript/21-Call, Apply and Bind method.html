@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call, Apply and Bind method</title>
+  </head>
+  <body>
+    <h1>Call, Apply and Bind method</h1>
+
+    <script>
+      function Student(firstName, lastName, subject) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.subject = subject;
+        this.greet = function () {
+          console.log(`${this.firstName} ${this.lastName}`);
+        };
+      }
+
+      let student1 = new Student("John", "Doe", "CS");
+      student1.greet();
+
+      function Employee(firstName, lastName, department) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.department = department;
+        this.greet = function () {
+          console.log(`${this.firstName} ${this.lastName}`);
+        };
+      }
+
+      let emp1 = new Employee("Jason", "Smith");
+      emp1.greet();
+
+      function Student2(firstName2, lastName2, subject2) {
+        this.firstName2 = firstName2;
+        this.lastName2 = lastName2;
+        this.subject2 = subject2;
+      }
+
+      const greet = function (prefix, suffix) {
+        console.log(`${prefix} ${this.firstName2} ${this.lastName2} ${suffix}`);
+      };
+
+      let student2 = new Student2("John", "Doe", "CS");
+
+      //   greet();
+      greet.call(student2, "Hi!", "-How are you?");
+      greet.apply(student2, ["Hi!", "-How are you?"]);
+
+      let fn = greet.bind(student2);
+      console.log(fn);
+      fn("A", "B");
+
+      //   function Employee2(firstName2, lastName2, department2) {
+      //     this.firstName2 = firstName2;
+      //     this.lastName2 = lastName2;
+      //     this.department2 = department2;
+      //   }
+      //   let emp2 = new Employee2("Jason", "Smith");
+      //   greet.call(emp2, "Mr.", "-How are you?");
+    </script>
+  </body>
+</html>

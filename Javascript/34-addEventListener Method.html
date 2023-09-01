@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addEventListener Method</title>
+    <style>
+      .stand {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAo7Npr4XWq0v48vNvLqV-2lJvVWo6qSgg-g&usqp=CAU");
+        background-position-x: 240px;
+        background-position-y: 168px;
+        background-size: cover;
+        width: 240px;
+        height: 161px;
+      }
+
+      .jump {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAo7Npr4XWq0v48vNvLqV-2lJvVWo6qSgg-g&usqp=CAU");
+        background-position-x: 239px;
+        background-position-y: -164px;
+        background-size: cover;
+        width: 240px;
+        height: 161px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>addEventListener Method</h1>
+    <button>Alert</button>
+    <div class="stand" id="player"></div>
+    <img
+      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxhcHRvcCUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      alt=""
+    />
+
+    <script>
+      let btn = document.querySelector("button");
+      btn.addEventListener("click", function () {
+        alert("Hello World");
+      });
+      btn.addEventListener("mouseenter", function () {
+        console.log("Mouse Enter");
+      });
+
+      btn.addEventListener("mouseleave", function () {
+        console.log("Mouse leave");
+      });
+
+      let player = document.querySelector("#player");
+      player.addEventListener("mouseenter", function () {
+        player.classList.replace("stand", "jump");
+      });
+
+      player.addEventListener("mouseleave", function () {
+        player.classList.replace("jump", "stand");
+      });
+
+      window.addEventListener("load", function () {
+        console.log("Window Loaded");
+      });
+    </script>
+  </body>
+</html>

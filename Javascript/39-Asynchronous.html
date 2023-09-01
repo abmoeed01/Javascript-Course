@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asynchronous</title>
+  </head>
+  <body>
+    <h1>Asynchronous</h1>
+    <button onclick="callMe()">Call Me</button>
+
+    <script>
+      console.log(1);
+      // runTask();
+      setTimeout(() => {
+        console.log(2);
+      }, 5000);
+      console.log(3);
+
+      function runTask() {
+        for (let i = 0; i < 5; i++) {
+          console.log(2);
+        }
+      }
+
+      function callMe() {
+        console.log("Button Clicked");
+      }
+
+      console.log("This program adds 1, 2 and 54");
+      function addThreeNumber(a, b, c) {
+        return a + b + c;
+      }
+      let c = addThreeNumber(1, 2, 54);
+      console.log(c);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects and its Methods</title>
+  </head>
+  <body>
+    <h1>Objects and its Methods</h1>
+
+    <script>
+      let student1 = {
+        firstName: "John",
+        lastName: "Doe",
+        dateOfBirth: 12 / 2 / 2000,
+        getFullName: function () {
+          console.log(this.firstName + " " + this.lastName);
+          //   console.log("This is full name");
+        },
+      };
+
+      let student2 = {
+        firstName: "Lilly",
+        lastName: "Doe",
+        dateOfBirth: 12 / 2 / 2000,
+        getFullName: function () {
+          console.log(this.firstName + " " + this.lastName);
+        },
+      };
+      console.log(student1);
+      student1.getFullName();
+      student2.getFullName();
+
+      let car = {
+        name: "Honda",
+        type: "Petrol",
+        fuel: 10,
+        drive: function () {
+          if (this.fuel > 0) {
+            console.log("Car is Driving");
+          } else {
+            console.log("Please Refill");
+          }
+        },
+      };
+      car.drive();
+      car.fuel = 0;
+      car.drive();
+
+      let car2 = {
+        name: "Honda",
+        type: "Petrol",
+        fuel: 10,
+        drive: function () {
+          if (this.fuel > 0) {
+            console.log("Car is Driving");
+          } else {
+            console.log("Please Refill");
+          }
+        },
+      };
+      for (let i in car2) {
+        console.log(i);
+      }
+    </script>
+  </body>
+</html>

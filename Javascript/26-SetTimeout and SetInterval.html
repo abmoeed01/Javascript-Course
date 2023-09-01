@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SetTimeout & SetInterval</title>
+  </head>
+  <body>
+    <h1>SetTimeout & SetInterval</h1>
+
+    <script>
+      // function fn() {
+      //   console.log("Hello");
+      // }
+      // fn();
+      // setTimeout(fn, 5000);
+
+      // setTimeout(function () {
+      //   console.log("CheezyCode");
+      // }, 2000);
+
+      function fn() {
+        if (counter == 5) {
+          clearInterval(timer);
+        } else {
+          console.log("Hello");
+          counter++;
+        }
+      }
+      let timer = setInterval(fn, 1000);
+      let counter = 0;
+    </script>
+  </body>
+</html>

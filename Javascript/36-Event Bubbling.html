@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling stoppropagation & preventDefault</title>
+    <style>
+      #outer {
+        width: 500px;
+        height: 200px;
+        background-color: rgb(66, 49, 82);
+        color: aqua;
+        padding: 10px;
+      }
+
+      #inner {
+        width: 400px;
+        height: 70px;
+        background-color: rgb(168, 130, 204);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Bubbling stoppropagation & preventDefault</h1>
+    <div id="outer">
+      I am outer
+      <div id="inner">I am inner</div>
+    </div>
+
+    <a class="btn" href="https://www.google.com">Click Me</a>
+
+    <script>
+      let outer = document.querySelector("#outer");
+      let inner = document.querySelector("#inner");
+      let a = document.querySelector("a");
+
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        console.log("a clicked");
+      });
+
+      document.body.addEventListener("click", function () {
+        console.log("body clicked");
+      });
+
+      outer.addEventListener("click", function (event) {
+        event.stopPropagation();
+        console.log("Outer clicked");
+      });
+
+      inner.addEventListener("click", function (event) {
+        // event.stopImmediatePropagation();
+        event.stopPropagation();
+        console.log("Inner clicked - 1");
+      });
+
+      inner.addEventListener("click", function (event) {
+        console.log("Inner clicked - 2");
+      });
+    </script>
+  </body>
+</html>

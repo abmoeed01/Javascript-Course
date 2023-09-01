@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation and Select HTML Elements</title>
+    <style>
+      .shake {
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM Manipulation and Select HTML Elements</h1>
+
+    <h1 id="heading">Hello</h1>
+    <p>CheezyCode</p>
+    <p id="main">Random Text</p>
+
+    <div class="article">This is Article 1</div>
+    <div class="article">This is Article 2</div>
+    <br />
+    <br />
+    <input type="text" id="age" placeholder="Age" />
+
+    <script>
+      let heading = document.getElementById("heading");
+      console.log(heading);
+      //   console.dir(heading);
+
+      let divs = document.getElementsByClassName("article");
+      console.log(divs);
+      let divs2 = document.getElementsByTagName("div");
+      console.dir(divs2[0]);
+
+      let divs3 = document.querySelector(".heading");
+      console.log(divs3);
+
+      let divs4 = document.querySelector("#heading");
+      console.log(divs4);
+
+      let divs5 = document.querySelector(".article");
+      console.log(divs5);
+
+      let divs6 = document.querySelectorAll(".article");
+      console.log(divs6);
+
+      let input = document.getElementById("age");
+      console.log(input);
+
+      if (input.value > 18) {
+        input.classList.add("shake");
+      } else {
+        input.style.border = "1px solid red";
+      }
+    </script>
+  </body>
+</html>

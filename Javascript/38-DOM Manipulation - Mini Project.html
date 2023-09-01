@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation - Mini Project | DOM Events</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <style>
+      body {
+        background-color: aqua;
+        position: relative;
+        color: #fff;
+        font-family: sans-serif;
+      }
+
+      #app {
+        background-color: #3949ab;
+        margin: 40px auto;
+        border: 1px solid #ccc;
+        width: 480px;
+        height: 480px;
+        padding: 40px;
+      }
+
+      #logo {
+        width: 80px;
+        margin-left: -5px;
+      }
+
+      #separator {
+        width: 200px;
+        height: 2px;
+        background-color: #fff;
+        display: inline-block;
+      }
+
+      #quote {
+        font-size: 40px;
+        vertical-align: top;
+        margin: 40px 0 20px;
+      }
+
+      #author {
+        font-size: 24px;
+      }
+
+      #controls {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeNgvcvgpkajufZ6KdxxptGaRZIcvRQJtpVw&usqp=CAU"
+        alt=""
+        id="logo"
+      />
+      <p id="quote">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio quia
+        expedita repellendus.
+      </p>
+      <span id="separator"></span>
+      <p id="author">Thomas Edison</p>
+    </div>
+
+    <div id="controls">
+      <input type="text" placeholder="Quote..." name="quote" />
+      <input type="text" placeholder="Author..." name="author" />
+      <button id="btnBackground">Background</button>
+      <button id="btnDownload">Download</button>
+    </div>
+
+    <script>
+      let app = document.querySelector("#app");
+      let btnDownload = document.querySelector("#btnDownload");
+      let quoteInput = document.querySelector("[name=quote]");
+      let quoteText = document.querySelector("#quote");
+      let btnBackground = document.querySelector("#btnBackground");
+
+      let colors = [
+        "#32a852",
+        "#326fa8",
+        "#325ba8",
+        "#3248a8",
+        "#a83248",
+        "#a89e32",
+        "#303834",
+        "#77a68f",
+        "#1f7d4f",
+        "#1d2e26",
+        "#2c3630",
+        "#052b14",
+        "#122118",
+        "#25302a",
+        "#bdb5b5",
+        "#d47d7d",
+        "#0d111c",
+        "#282e40",
+      ];
+
+      btnBackground.addEventListener("click", function (e) {
+        let index = Math.floor(Math.random() * colors.length);
+        let randomColor = colors[index];
+        app.style.background = randomColor;
+      });
+
+      quoteInput.addEventListener("keyup", function (e) {
+        quoteText.innerText = e.currentTarget.value;
+      });
+
+      let authorInput = document.querySelector("[name=author]");
+      let authorText = document.querySelector("#author");
+
+      authorInput.addEventListener("keyup", function (e) {
+        authorText.innerText = e.currentTarget.value;
+      });
+
+      btnDownload.addEventListener("click", function () {
+        html2canvas(app).then((canvas) => {
+          //   document.body.appendChild(canvas);
+          let a = document.createElement("a");
+          a.download = Math.floor(Math.random() * 5000) + ".png";
+          a.href = canvas.toDataURL();
+          a.click();
+        });
+      });
+    </script>
+  </body>
+</html>

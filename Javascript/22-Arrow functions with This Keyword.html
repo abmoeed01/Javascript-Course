@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow functions with This Keyword</title>
+  </head>
+  <body>
+    <h1>Arrow functions with This Keyword</h1>
+
+    <script>
+      let sum = function (a, b) {
+        let total = a + b;
+        return total;
+      };
+      console.log(sum(3, 4));
+
+      let sum2 = (c, d) => {
+        let total = c + d;
+        return total;
+      };
+      console.log(sum2(3, 6));
+
+      let sum3 = (e, f) => e + f;
+      console.log(sum3(3, 7));
+
+      let square = function (g) {
+        return g * g;
+      };
+      console.log(square(4));
+
+      let square2 = (h) => h * h;
+      console.log(square2(5));
+
+      let square3 = (h) => h * h;
+      console.log(square3(6));
+
+      let printMessage = function () {
+        console.log("Hello World1");
+      };
+
+      let printMessage2 = () => console.log("Hello World2");
+
+      //   1-Concise
+      // 2-Implicit return
+      // 3-this Keyword
+
+      window.firstName = "JSON";
+      console.log(this);
+      let obj = {
+        firstName: "John",
+        lastName: "Doe",
+        getFullName: function () {
+          console.log(this.firstName + " " + this.lastName);
+        },
+        getArrowFullName: () => {
+          console.log(this);
+          console.log(this.firstName + " " + this.lastName);
+        },
+      };
+      obj.getFullName();
+      obj.getArrowFullName();
+
+      //   Lexically, this arrow function is defined inside the object and here the value of this is window object
+    </script>
+  </body>
+</html>

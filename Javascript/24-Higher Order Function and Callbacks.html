@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Higher Order Function and Callbacks</title>
+  </head>
+  <body>
+    <h1>Higher Order Function and Callbacks</h1>
+
+    <script>
+      function add(a, b) {
+        return a + b;
+      }
+
+      console.log(add(3, 4));
+
+      function power(c, d) {
+        return Math.pow(c, d);
+      }
+      console.log(power(2, 4));
+
+      //   function expression
+      let addition = function (e, f) {
+        return e + f;
+      };
+      console.log(addition(4, 5));
+
+      addition.xyz = "Random";
+      console.log(addition.xyz);
+
+      function operation(a, b, fn) {
+        let result = fn(a, b);
+        console.log(result);
+      }
+
+      operation(5, 5, add);
+      operation(5, 3, power);
+
+      function outer() {
+        function inner() {
+          console.log("Inner");
+        }
+        return inner;
+      }
+
+      let result1 = outer();
+      result1();
+
+      function Employee(name, age, department) {
+        this.name = name;
+        this.age = age;
+        this.department = department;
+      }
+
+      let employees = [
+        new Employee("John", 22, "Core"),
+        new Employee("MArtin", 21, "DevOps"),
+        new Employee("Jason", 22, "Core"),
+        new Employee("Jim", 27, "Admin"),
+        new Employee("John", 32, "Admin"),
+      ];
+
+      function filterByAge(emps, age) {
+        let result2 = [];
+        for (let i = 0; i < emps.length; i++) {
+          if (emps[i].age == age) {
+            result2.push(emps[i]);
+          }
+        }
+        return result2;
+      }
+
+      function filterByDept(emps, dept) {
+        let result2 = [];
+        for (let i = 0; i < emps.length; i++) {
+          if (emps[i].department == dept) {
+            result2.push(emps[i]);
+          }
+        }
+        return result2;
+      }
+
+      function filter(emps, fn) {
+        let result2 = [];
+        for (let i = 0; i < emps.length; i++) {
+          if (fn(emps[i])) {
+            result2.push(emps[i]);
+          }
+        }
+        return result2;
+      }
+
+      console.log(filterByAge(employees, 27));
+      console.log(filterByDept(employees, "Admin"));
+
+      console.log(
+        filter(employees, function (emp) {
+          return emp.age == 27;
+        })
+      );
+      console.log(
+        filter(employees, function (emp) {
+          return emp.department == "Admin";
+        })
+      );
+    </script>
+  </body>
+</html>

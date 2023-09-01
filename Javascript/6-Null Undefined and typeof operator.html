@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Null, Undefined and typeof operator</title>
+  </head>
+  <body>
+    <h1>Null, Undefined and typeof operator</h1>
+
+    <script>
+      let a;
+      console.log(a);
+
+      let b = null;
+      console.log(b);
+
+      console.log(typeof 2);
+      console.log(typeof "2");
+      console.log(typeof "Hello");
+      console.log(typeof false);
+      console.log(typeof null);
+      console.log(typeof undefined);
+
+      console.log(typeof "" == "string");
+      let c = 1;
+      console.log(typeof c);
+      c = "xyz";
+      console.log(typeof c);
+
+      let x = "" ? true : false;
+      console.log(x);
+      let y = "Hello" ? true : false;
+      console.log(y);
+
+      let p = 0 ? true : false;
+      console.log(p);
+      let q = 5 ? true : false;
+      console.log(q);
+      let z = -5 ? true : false;
+      console.log(z);
+
+      let gender;
+      console.log(gender ? true : false);
+
+      gender = "Male";
+      console.log(gender ? true : false);
+
+      gender = null;
+      console.log(gender ? true : false);
+
+      console.log(gender ? true : false);
+
+    </script>
+  </body>
+</html>

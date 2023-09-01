@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this Keyword</title>
+  </head>
+  <body>
+    <h1>this Keyword</h1>
+
+    <script>
+      // 1st
+      let obj = {
+        firstName: "John",
+        lastName: "Doe",
+        getfullName: function () {
+          console.log(this);
+          console.log(this.firstName + " " + this.lastName);
+        },
+        address: {
+          street: "123,Avenue Street",
+          city: "San Jose",
+          getAddress: function () {
+            console.log(this);
+            console.log(this.street + " " + this.city);
+            console.log(this.firstName);
+          },
+        },
+      };
+
+      obj.getfullName();
+      obj.address.getAddress();
+
+      let obj2 = {
+        firstName: "Lilly",
+        lastName: "Doe",
+        getfullName: function () {
+          console.log(this);
+          console.log(this.firstName + " " + this.lastName);
+        },
+      };
+
+      obj2.getfullName();
+
+      //   2nd
+      function Person(firstName1, lastName1) {
+        // let this = {}
+        this.firstName1 = firstName1;
+        this.lastName1 = lastName1;
+        this.getfullName1 = function () {
+          console.log(this.firstName1 + " " + this.lastName1);
+        };
+        // return this;
+      }
+
+      let person1 = new Person("John", "Doe");
+      console.log(person1);
+      person1.getfullName1();
+
+      let person2 = new Person("Lilly", "Doe");
+      console.log(person2);
+      person2.getfullName1();
+
+      //   3rd
+      function printMessage() {
+        console.log(this);
+      }
+
+      function Person2(firstName2, lastName2) {
+        this.firstName2 = firstName2;
+        this.lastName2 = lastName2;
+        this.getfullName2 = function () {
+          console.log(this.firstName2 + " " + this.lastName2);
+        };
+      }
+
+      let person3 = new Person2("John", "Doe");
+
+      Person2("John", "Doe");
+      printMessage();
+
+      let obj3 = new printMessage();
+    </script>
+  </body>
+</html>

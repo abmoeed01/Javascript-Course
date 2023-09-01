@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      placeholder="type.."
+      onkeypress="return onlyAlphabets(event)"
+    />
+
+    <script>
+      function onlyAlphabets(e) {
+        console.log(e);
+        let charCode = e.keyCode;
+        // A = 65
+        // Z = 90
+        // a = 97
+        // z = 122
+
+        if (
+          (charCode > 64 && charCode < 91) ||
+          (charCode > 96 && charCode < 123)
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

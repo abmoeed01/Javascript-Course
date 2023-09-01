@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects & Object Literals</title>
+  </head>
+  <body>
+    <h1>Objects & Object Literals</h1>
+
+    <script>
+      let firstName = "John";
+      let lastName = "Doe";
+      let age = 21;
+
+      let student1 = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 21,
+      };
+      console.log(student1);
+      console.log(student1.firstName);
+      console.log(student1.lastName);
+      console.log(student1.age);
+
+      console.log(student1.agedfghj);
+
+      student1.address = "123,Ayoub Colony,FSD";
+      console.log(student1);
+      delete student1.age;
+      console.log(student1);
+
+      student1["street address"] = "Avenue Street";
+      student1["dateOfBirth"] = "12/2/2020";
+      console.log(student1);
+      console.log(student1["street address"]);
+
+      let student2 = {
+        firstName: "Lilly",
+        lastName: "Doe",
+        age: 22,
+        "xyz": false,
+        address: {
+          city: "FSD",
+          state: "Pakistan",
+        },
+      };
+      console.log(student2);
+      console.log(student2.address.state);
+    </script>
+  </body>
+</html>

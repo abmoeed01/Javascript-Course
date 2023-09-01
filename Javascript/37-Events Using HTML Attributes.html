@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events Using HTML Attributes onclick, onkeypress</title>
+  </head>
+  <body>
+    <h1>Events Using HTML Attributes onclick, onkeypress</h1>
+    <button type="button" onclick="showAlert(event)">Alert</button>
+    <a href="https://www.google.com" onclick="dontRedirect(event)"
+      >Go to Google</a
+    >
+
+    <div id="player">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcd4EY7KLSQz_PprqZtMZUbAHChUJq94ZuAQ&usqp=CAU"
+        id="play"
+        alt=""
+        onclick="play()"
+      />
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsBkQe5iemOV9LTrC-yRU5FsM_D3X3Feuelg&usqp=CAU"
+        id="pause"
+        alt=""
+        onclick="pause()"
+      />
+    </div>
+
+    <script>
+      function showAlert(e) {
+        console.log(e);
+        alert("Hello");
+      }
+
+      function dontRedirect(e) {
+        e.preventDefault();
+        console.log("Link clicked");
+      }
+
+      let song = new Audio();
+      song.src = "ad.mp3";
+
+      function play() {
+        console.log("Play");
+        song.play();
+      }
+
+      function pause() {
+        console.log(pause);
+        song.pause();
+      }
+    </script>
+  </body>
+</html>

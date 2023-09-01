@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wrapper Objects and Built In Math Objects</title>
+  </head>
+  <body>
+    <h1>Wrapper Objects and Built In Math Objects</h1>
+
+    <script>
+      let msg = "Hello";
+      let number = 20;
+
+      // Wrapper Objects
+      // Numbers
+      // Boolean
+      // String
+
+      msg.type = "Message"; // new object was created - discard
+      console.log(msg.type); // msg. --> new object was created - undefined
+
+      //   Math Objects
+      console.log(Math.PI);
+      console.log(Math.floor(4.3));
+      console.log(Math.ceil(4.3));
+      console.log(Math.round(4.3));
+      console.log(Math.round(4.7));
+      console.log(Math.random());
+
+      let pizza = ["Thin Crust", "OverLoaded", "Peppy Paneer"];
+      num = Math.floor(Math.random() * 3);
+      console.log(pizza[num]);
+      num = Math.floor(Math.random() * 3);
+      console.log(pizza[num]);
+      num = Math.floor(Math.random() * 3);
+      console.log(pizza[num]);
+      num = Math.floor(Math.random() * 3);
+      console.log(pizza[num]);
+      num = Math.floor(Math.random() * 3);
+      console.log(pizza[num]);
+    </script>
+  </body>
+</html>

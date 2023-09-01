@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread and Rest Operator and Array/Object Destructuring</title>
+  </head>
+  <body>
+    <h1>Spread and Rest Operator and Array/Object Destructuring</h1>
+
+    <script>
+      // Rest Operator
+      // 1
+      function sum(...a) {
+        console.log(a);
+      }
+      sum(1, 2);
+      sum(1, 2, 3, 4, 5);
+
+      //   2
+      function sum2(...b) {
+        let result = 0;
+        b.forEach((num) => {
+          result += num;
+        });
+        console.log(result);
+      }
+
+      sum2(1, 2);
+      sum2(1, 2, 3, 4, 5);
+
+      //   Spread Operator
+      let nums = [3, 4, 5];
+      let nums2 = [1, 2, ...nums];
+      console.log(nums2);
+
+      let numbers = [1, 2, 3];
+      let copiedArray = [...numbers];
+      console.log(copiedArray);
+
+      let merge = [...nums, ...numbers];
+      console.log(merge);
+
+      let person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 22,
+      };
+
+      let person2 = { ...person, address: "Pakistan" };
+      console.log(person2);
+
+      // Destructuring
+      let numbers2 = [1, 2, 3];
+      let [first, second] = numbers2;
+      console.log(first, second);
+
+      // Object
+      let person3 = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 22,
+      };
+      let { firstName, lastName } = person3;
+      console.log(firstName);
+      console.log(lastName);
+    </script>
+  </body>
+</html>

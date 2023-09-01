@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constructor Functions</title>
+  </head>
+  <body>
+    <h1>Constructor Functions</h1>
+
+    <script>
+      let student1 = {
+        firstName: "John",
+        lastName: "Doe",
+        getfullName: function () {
+          console.log(`${this.firstName} ${this.lastName}`);
+        },
+      };
+
+      let student2 = {
+        firstName: "Lilly",
+        lastName: "Doe",
+        getfullName: function () {
+          console.log(`${this.firstName} ${this.lastName}`);
+        },
+      };
+
+      console.log(student1);
+      console.log(student2);
+
+      function createStudent(firstName, lastName) {
+        let student = {
+          firstName: firstName,
+          lastName: lastName,
+          getfullName: function () {
+            console.log(`${this.firstName} ${this.lastName}`);
+          },
+        };
+
+        return student;
+      }
+      let student3 = createStudent("James", "Dino");
+      console.log(student3);
+
+      function Student(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.getfullName = function () {
+          console.log(`${this.firstName} ${this.lastName}`);
+        };
+      }
+
+      let student4 = new Student("John", "Doe");
+      console.log(student4);
+    </script>
+  </body>
+</html>

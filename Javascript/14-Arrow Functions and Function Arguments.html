@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Functions & Function Arguments</title>
+  </head>
+  <body>
+    <h1>Arrow Functions & Function Arguments</h1>
+
+    <script>
+      function print(a, b) {
+        console.log(arguments);
+        console.log(a);
+        console.log(b);
+        return a + " " + b;
+      }
+      //   console.log(print(1, 2, 3, 4));
+
+      function sum() {
+        let total = 0;
+        for (let i = 0; i < arguments.length; i++) {
+          total = total + arguments[i];
+        }
+        // console.log(total);
+      }
+      sum(1, 2, 3);
+      sum(1, 2, 3, 4, 5);
+
+      function printMessage(count) {
+        for (let index = 0; index < count; index++) {
+          //   console.log(`Hello ${index}`);
+        }
+      }
+      printMessage(5);
+
+      function printMessage2(count = 1) {
+        for (let index = 0; index < count; index++) {
+          //   console.log(`Hello ${index}`);
+        }
+      }
+      printMessage2(3);
+
+      function avg(c, d) {
+        let value = (c + d) / 2;
+        return value;
+      }
+
+      const avg2 = (c, d) => {
+        let value = (c + d) / 2;
+        return value;
+      };
+
+      const avg3 = (c, d) => {
+        return (c + d) / 2;
+      };
+
+      const avg4 = (c, d) => (c + d) / 2;
+
+      const multiply = function (num) {
+        return num * 5;
+      };
+
+      const multiply2 = (num) => num * 5;
+    </script>
+  </body>
+</html>

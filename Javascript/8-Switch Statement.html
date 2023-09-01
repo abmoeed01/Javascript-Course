@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch Statement</title>
+  </head>
+  <body>
+    <h1>Switch Statement</h1>
+
+    <script>
+      let userInput = 2;
+
+      //   if (userInput == 1) {
+      //     console.log("Check Balance");
+      //   } else if (userInput == 2) {
+      //     console.log("Other Services");
+      //   } else if (userInput == 3) {
+      //     console.log("Customer Agent");
+      //   } else {
+      //     console.log("Incorrect Option");
+      //   }
+
+      //   Example 1
+      switch (userInput) {
+        case 1:
+          console.log("Check Balance");
+          break;
+        case 2:
+          console.log("Other Services");
+          break;
+        case 3:
+          console.log("Customer Agent");
+          break;
+        default:
+          console.log("Incorrect Option");
+          break;
+      }
+
+      //   Example 2
+      let registerOption = "Google";
+
+      switch (registerOption) {
+        case "Facebook":
+          console.log("Register via Facebook");
+          break;
+        case "Google":
+          console.log("Register via Google");
+          break;
+        default:
+          console.log("Register via Email & Password");
+          break;
+      }
+    </script>
+  </body>
+</html>

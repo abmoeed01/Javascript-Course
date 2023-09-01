@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closures with Examples</title>
+  </head>
+  <body>
+    <h1>Closures with Examples</h1>
+
+    <script>
+      // 1
+      let a = 10;
+      setTimeout(function () {
+        console.log(a);
+      }, 1000);
+
+      a = 11;
+
+      // 2
+      function multiplier(x) {
+        let fn = function (y) {
+          return x * y;
+        };
+        return fn;
+      }
+      let multiplier2 = multiplier(2);
+      console.log(multiplier2);
+      console.log(multiplier2(3));
+
+      let multiplier3 = multiplier(3);
+      console.log(multiplier3(4));
+
+      console.dir(multiplier2);
+      console.dir(multiplier3);
+
+      // 3
+      function Person(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.getFullName = function () {
+          return this.firstName + " " + this.lastName;
+        };
+      }
+      let person1 = new Person("John", "Doe", 22);
+      console.log(person1);
+
+      //   4
+      function Person2(firstName, lastName, age) {
+        this.getFullName = function () {
+          return firstName + " " + lastName;
+        };
+      }
+      let person2 = new Person2("Lilly", "Doe", 22);
+      console.log(person2.getFullName());
+    </script>
+  </body>
+</html>

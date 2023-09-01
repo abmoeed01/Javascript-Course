@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Methods & 2d Array</title>
+  </head>
+  <body>
+    <h1>Array Methods & 2d Array</h1>
+
+    <script>
+      let social = ["Facebook", "Instagram", "Twitter"];
+      console.log(social);
+
+      //   push()
+      social.push("Quora");
+      social.push("Youtube");
+      console.log(social);
+
+      //   pop()
+      let element = social.pop();
+      console.log(element);
+      console.log(social);
+
+      //   shift()
+      social.shift();
+      element = social.shift();
+      console.log(element);
+      console.log(social);
+
+      //   unshift()
+      social.unshift("Youtube");
+      social.unshift("Discord");
+      social.unshift("XYZ", "ABC");
+      console.log(social);
+
+      //   indexOf()
+      let social2 = ["Facebook", "Instagram", "Twitter"];
+      console.log(social2);
+      console.log(social2.indexOf("Instagram"));
+
+      //   join()
+      let social3 = ["Facebook", "Instagram", "Twitter"];
+      console.log(social3);
+      console.log(social3.join(" - "));
+
+      let social4 = ["Facebook", "Instagram", "Twitter"];
+      console.log(social4);
+
+      // splice()
+      // remove
+      //   social4.splice(1, 1);
+      //   social4.splice(1, 2);
+      //   console.log(social4);
+
+      //   add
+      social4.splice(1, 0, "Quora", "Youtube");
+      console.log(social4);
+
+      //   replace
+      let social5 = ["Facebook", "Instagram", "Twitter"];
+      console.log(social5);
+      social5.splice(1, 1, "Discord");
+      console.log(social5);
+
+      //   2d Array
+      let board = [
+        [0, 1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+      console.log(board);
+    </script>
+  </body>
+</html>

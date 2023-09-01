@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Block, Global & Function Scope JS</title>
+  </head>
+  <body>
+    <h1>Block, Global & Function Scope JS</h1>
+
+    <script>
+      // Block Scope:
+      //   let a = 20;
+
+      //   if (a == 20) {
+      //     let b = 30;
+      //     const c = 40;
+
+      //     console.log(a);
+      //     console.log(b);
+      //     console.log(c);
+      //   }
+      //   //   console.log(c);
+
+      //   {
+      //     let d = 50;
+      //   }
+      //   console.log(d);
+
+      // Global Scope:
+      //   let e = 20;
+
+      //   if (e == 20) {
+      //     let f = 30;
+      //     const g = 40;
+
+      //     console.log(e);
+      //     console.log(f);
+      //     console.log(g);
+      //   }
+
+      //   console.log(e);
+
+      //   function fn() {
+      //     let p = 20;
+      //     const q = 30;
+      //   }
+      //   fn();
+      //   console.log(p);
+
+      //   Function Scope
+      var x = 20;
+
+      if (1 == 1) {
+        console.log(x);
+        var y = 30;
+        console.log(y);
+      }
+      console.log(y);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation Add/Remove HTML Elements</title>
+  </head>
+  <body>
+    <h1>DOM Manipulation Add/Remove HTML Elements</h1>
+    <h1 id="heading">Hello</h1>
+    <p>CheezyCode</p>
+    <p id="main">Random Text</p>
+
+    <div class="article">This is Article 1</div>
+    <div class="article">This is Article 2</div>
+    <br />
+    <br />
+    <input type="text" id="age" placeholder="Age" />
+    <select name="" id="language"></select>
+
+    <script>
+      let span = document.createElement("span");
+      span.innerText = " is Love";
+      console.log(span);
+
+      let p = document.querySelector("p");
+      console.log(p);
+      p.appendChild(span);
+      console.log(p);
+
+      let img = document.createElement("img");
+      console.log(img);
+      img.src =
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZedbqvFq9wEKHdTqbqwZmka6bXs13bRKVpUjRKnofi8l2hEu8EoNxLsg1b4jAa_4b_w4&usqp=CAU";
+      document.body.appendChild(img);
+
+      //   var h1 = document.querySelector("#heading");
+      //   console.log(h1);
+      //   document.removeChild(h1);
+      //   document.body.removeChild(h1);
+
+      //   var h1 = document.querySelector("#heading");
+      //   h1.parentElement;
+      //   console.log(h1);
+
+      let select = document.getElementById("language");
+      console.log(select);
+      var technologies = ["JS", "React", "NextJs", "NodeJs"];
+      technologies.forEach((item) => {
+        var option = document.createElement("option");
+        option.innerText = item;
+        option.value = item;
+        select.appendChild(option);
+      });
+    </script>
+  </body>
+</html>

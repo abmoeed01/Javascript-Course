@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String & Template String</title>
+  </head>
+  <body>
+    <h1>String & Template String</h1>
+
+    <script>
+      // Strings
+      let message = "CHEEZYCODE";
+      console.log(message);
+      console.log(message.length);
+      console.log(message[0]);
+      console.log(message[1]);
+
+      let anotherMessage = "HELLO WORLD";
+      console.log(anotherMessage);
+
+      // String Concatenation
+      let message1 = "Hello" + "World";
+      console.log(message1);
+
+      message1 = "Hello" + " " + "World";
+      console.log(message1);
+
+      let a = "asdfghfghjklghj                         zxcvbndfghjkerty";
+      console.log(a);
+
+      let b = " ";
+      console.log(b.length);
+
+      let age = 23;
+      let text = "I am " + age + " years old";
+      console.log(text);
+
+      //   Template String
+      text = `I am ${age} years old`;
+      console.log(text);
+
+      let msg = `2 * 3 = ${2 * 3}`;
+      console.log(msg);
+
+      let i = 12;
+      let j = 13;
+      msg = `${i} + ${j} = ${i + j}`;
+      console.log(msg);
+    </script>
+  </body>
+</html>
